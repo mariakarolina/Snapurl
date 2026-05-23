@@ -83,7 +83,7 @@ export default function Navbar() {
             <Link to="/" className="flex items-center space-x-2">
               <LinkIcon className="h-6 w-6 text-gray-700 " />
               <span className="text-xl font-bold text-gray-900 ">
-                URL Shortener
+                SnapURL
               </span>
             </Link>
 
@@ -227,7 +227,7 @@ export default function Navbar() {
           <div className="flex items-center space-x-2">
             <LinkIcon className="h-6 w-6 text-gray-700 " />
             <span className="text-xl font-bold text-gray-900 ">
-              URL Shortener
+              SnapURL
             </span>
           </div>
           <button

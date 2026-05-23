@@ -101,16 +101,12 @@ export default function RedirectPage() {
         {/* Footer */}
         <div className="mt-8 text-center">
           <p className="text-sm text-gray-500">
-            Made by{" "}
-            <a
-              href="https://theavnishkumar.in"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-indigo-600 hover:text-indigo-800 font-medium"
-            >
-              Avnish Kumar
-            </a>{" "}
-            • Built with ❤️ for learning
+            Desenvolvido Por{" "}
+            <span className="text-indigo-600 font-medium">
+                  Vladison, Maria, Tomaz, Ingryd
+            </span>{" "}
+            • Ciência da Computação — 7º período
+            • Feito com ❤️ para aprender
           </p>
         </div>
       </div>

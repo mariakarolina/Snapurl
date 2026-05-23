@@ -1,126 +1,72 @@
 import { Link } from "react-router";
-import { ExternalLink, Github, Mail } from "lucide-react";
-// import { AdsComponent } from "../components/AdsComponent";
+import { Github, Mail } from "lucide-react";
 
 export default function About() {
   return (
     <>
-      {/* meta tags */}
-      <title>
-        About | URL Shortener Project by Avnish Kumar - Full Stack MERN
-        Developer
-      </title>
-      <meta
-        name="description"
-        content="Explore the advanced URL Shortener project built by Avnish Kumar, a Full Stack MERN Developer from Buxar. Learn how this secure, fast, and analytics-ready shortener was built using MongoDB, Express.js, React.js, and Node.js — ideal for real-world use and final year engineering students. Production ready and open source url shortener project"
-      />
-      <meta
-        name="keywords"
-        content="URL Shortener, Avnish Kumar, MERN Project, Avnish Kumar Jabalpur, Avnish Kumar Buxar, Avnish Kumar MERN Developer, Avnish Kumar Full Stack Developer, Avnish Kumar Backend Developer, Avnish Kumar Project, URL Shortener Project, Project by Avnish Kumar, Advanced URL Shortener, Web Developer, Final Year Project, Computer Science Project, Short Link Tool, Open Source Project, College Project, CSE Project"
-      />
-      <meta name="author" content="Avnish Kumar" />
+      <title>Sobre | Encurtador de URLs — Ciência da Computação</title>
+      <meta name="description" content="Projeto acadêmico de encurtador de URLs desenvolvido por estudantes do 7º período de Ciência da Computação, utilizando a stack MERN com Redis e Docker." />
+      <meta name="keywords" content="Encurtador de URL, MERN, Projeto Acadêmico, Ciência da Computação, Redis, Docker, MongoDB, React, Node.js" />
+      <meta name="author" content="Vladison, Maria, Tomaz e Ingryd" />
 
-      {/* Open Graph / Facebook */}
-      <meta
-        property="og:title"
-        content="About | URL Shortener by Avnish Kumar"
-      />
-      <meta
-        property="og:description"
-        content="This MERN-based URL shortener is an open-source project with advanced features and real-world learning for developers and students."
-      />
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://url.ihavetech.com/about" />
-      <meta property="og:site_name" content="URL Shortener" />
-      <meta
-        property="og:image"
-        content="https://url.ihavetech.com/og-image.png"
-      />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
-      <meta property="og:image:alt" content="URL Shortener by Avnish Kumar" />
-
-      {/* Twitter Card */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta
-        name="twitter:title"
-        content="About | URL Shortener by Avnish Kumar"
-      />
-      <meta
-        name="twitter:description"
-        content="Explore the full breakdown of features, tech stack, and developer story behind the MERN-based URL Shortener."
-      />
-      <meta
-        name="twitter:image"
-        content="https://url.ihavetech.com/og-image.jpg"
-      />
-      <meta name="twitter:creator" content="@theavnishkumar" />
-
-      {/* about page code */}
       <main className="min-h-screen flex flex-col bg-white">
         <div className="flex-grow">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div className="text-center mb-12">
               <h1 className="text-4xl font-bold text-gray-900 mb-4">
-                About URL Shortener
+                Sobre o Projeto
               </h1>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                A comprehensive URL shortening solution built for educational
-                purposes and real-world applications
+                Uma solução completa de encurtamento de URLs desenvolvida para fins acadêmicos e aplicações reais
               </p>
             </div>
 
             <div className="prose prose-lg max-w-none">
+
               <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-8">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-                  Project Overview
+                  Visão Geral do Projeto
                 </h2>
                 <p className="text-gray-700 mb-4">
-                  This URL Shortener application is a production-level project
-                  designed specifically for computer science students in their
-                  3rd or 4th year, perfect for minor or major project
-                  submissions. Built with the modern MERN stack (MongoDB,
-                  Express.js, React.js, Node.js), it demonstrates
-                  industry-standard practices and comprehensive feature
-                  implementation.
+                  Este encurtador de URLs é um projeto acadêmico desenvolvido por estudantes do
+                  7º período de Ciência da Computação. Construído com a stack MERN (MongoDB,
+                  Express.js, React.js, Node.js, Redis, Docker, TailwindCSS, JWT Auth), o projeto demonstra práticas modernas de
+                  desenvolvimento web, incluindo cache com Redis e containerização com Docker.
                 </p>
                 <p className="text-gray-700">
-                  The project showcases advanced concepts including user
-                  authentication, data analytics, security implementations, and
-                  responsive design - making it an excellent learning resource
-                  and portfolio piece for aspiring developers.
+                  O sistema foi projetado com foco em escalabilidade, segurança e boas práticas
+                  de engenharia de software. Servindo como projeto de conclusão de disciplina
+                  e portfólio para os desenvolvedores envolvidos.
                 </p>
               </div>
 
-              {/* <AdsComponent dataAdSlot="1002244889" /> */}
-
               <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mt-8 mb-8">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-                  Key Features
+                  Funcionalidades
                 </h2>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h3 className="text-lg font-medium text-gray-900 mb-2">
-                      Core Functionality
+                      Funcionalidades Principais
                     </h3>
                     <ul className="text-gray-700 space-y-1">
-                      <li>• Secure URL shortening with unique IDs</li>
-                      <li>• QR code generation for each link</li>
-                      <li>• Real-time click tracking and analytics</li>
-                      <li>• User dashboard with comprehensive stats</li>
-                      <li>• Mobile-responsive design</li>
+                      <li>• Encurtamento seguro de URLs com IDs únicos</li>
+                      <li>• Geração de QR Code para cada link</li>
+                      <li>• Rastreamento de cliques em tempo real</li>
+                      <li>• Dashboard com estatísticas completas</li>
+                      <li>• Design responsivo para mobile</li>
                     </ul>
                   </div>
                   <div>
                     <h3 className="text-lg font-medium text-gray-900 mb-2">
-                      Advanced Features
+                      Funcionalidades Avançadas
                     </h3>
                     <ul className="text-gray-700 space-y-1">
-                      <li>• JWT-based authentication system</li>
-                      <li>• IP logging and location tracking</li>
-                      <li>• Login history with privacy controls</li>
-                      <li>• Safe deletion with backup system</li>
-                      <li>• Contact form with email integration</li>
+                      <li>• Autenticação JWT</li>
+                      <li>• Cache com Redis para alta performance</li>
+                      <li>• Rastreamento de localização por IP</li>
+                      <li>• Histórico de acessos</li>
+                      <li>• Exclusão segura com backup</li>
                     </ul>
                   </div>
                 </div>
@@ -128,7 +74,7 @@ export default function About() {
 
               <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-8">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-                  Technology Stack
+                  Stack Tecnológica
                 </h2>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
@@ -136,11 +82,11 @@ export default function About() {
                       Frontend
                     </h3>
                     <ul className="text-gray-700 space-y-1">
-                      <li>• React 19 with modern hooks</li>
-                      <li>• Vite for fast development</li>
-                      <li>• TailwindCSS for styling</li>
-                      <li>• React Query for state management</li>
-                      <li>• React Router v7 for navigation</li>
+                      <li>• React 19 com hooks modernos</li>
+                      <li>• Vite para desenvolvimento rápido</li>
+                      <li>• TailwindCSS para estilização</li>
+                      <li>• React Query para gerenciamento de estado</li>
+                      <li>• React Router v7 para navegação</li>
                     </ul>
                   </div>
                   <div>
@@ -148,11 +94,11 @@ export default function About() {
                       Backend
                     </h3>
                     <ul className="text-gray-700 space-y-1">
-                      <li>• Node.js with Express 5</li>
-                      <li>• MongoDB for data storage</li>
-                      <li>• JWT for secure authentication</li>
-                      <li>• HTTP-only cookies for security</li>
-                      <li>• TTL indexes for data cleanup</li>
+                      <li>• Node.js com Express</li>
+                      <li>• MongoDB para armazenamento de dados</li>
+                      <li>• Redis (Upstash) como cache</li>
+                      <li>• JWT para autenticação segura</li>
+                      <li>• Docker para containerização</li>
                     </ul>
                   </div>
                 </div>
@@ -160,125 +106,65 @@ export default function About() {
 
               <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-8">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-                  Educational Value
+                  Valor Educacional
                 </h2>
                 <p className="text-gray-700 mb-4">
-                  This project serves as an excellent learning resource for
-                  students, covering essential concepts in modern web
-                  development:
+                  Este projeto cobre conceitos essenciais do desenvolvimento web moderno:
                 </p>
                 <ul className="text-gray-700 space-y-2">
-                  <li>
-                    • <strong>Full-Stack Development:</strong> Complete MERN
-                    stack implementation
-                  </li>
-                  <li>
-                    • <strong>Security Best Practices:</strong> JWT
-                    authentication, secure cookies, input validation
-                  </li>
-                  <li>
-                    • <strong>Database Design:</strong> MongoDB schema design
-                    with relationships and indexing
-                  </li>
-                  <li>
-                    • <strong>API Development:</strong> RESTful API design and
-                    implementation
-                  </li>
-                  <li>
-                    • <strong>Frontend Architecture:</strong> Component-based
-                    design with modern React patterns
-                  </li>
-                  <li>
-                    • <strong>Data Analytics:</strong> Click tracking, user
-                    analytics, and data visualization
-                  </li>
-                  <li>
-                    • <strong>DevOps Concepts:</strong> Environment
-                    configuration, deployment strategies
-                  </li>
+                  <li>• <strong>Desenvolvimento Full-Stack:</strong> Implementação completa da stack MERN</li>
+                  <li>• <strong>Segurança:</strong> Autenticação JWT, cookies seguros e validação de entrada</li>
+                  <li>• <strong>Banco de Dados:</strong> Modelagem MongoDB com índices e relacionamentos</li>
+                  <li>• <strong>Cache:</strong> Redis para redução de latência e escalabilidade</li>
+                  <li>• <strong>API REST:</strong> Design e implementação de endpoints RESTful</li>
+                  <li>• <strong>Analytics:</strong> Rastreamento de cliques e visualização de dados</li>
+                  <li>• <strong>DevOps:</strong> Docker Compose para orquestração de serviços</li>
                 </ul>
               </div>
 
               <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-8">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-                  Project Creator
-                </h2>
-                <div className="flex items-start space-x-4">
-                  <div className="flex-1">
-                    <h3 className="text-lg font-medium text-gray-900 mb-2">
-                      Avnish Kumar
-                    </h3>
-                    <p className="text-gray-700 mb-4">
-                      A passionate developer and educator who created this
-                      project to help fellow students learn modern web
-                      development through hands-on experience. The project
-                      demonstrates industry-standard practices and serves as a
-                      comprehensive learning resource.
-                    </p>
-                    <div className="flex space-x-4">
-                      <a
-                        href="https://github.com/theavnishkumar"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center text-indigo-600 hover:text-indigo-800"
-                      >
-                        <Github className="h-5 w-5 mr-2" />
-                        GitHub Profile
-                      </a>
-                      <a
-                        href="https://github.com/theavnishkumar/url-Shortener"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center text-indigo-600 hover:text-indigo-800"
-                      >
-                        <ExternalLink className="h-5 w-5 mr-2" />
-                        Project Repository
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-8">
-                <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-                  Open Source & Contributions
+                  A Equipe
                 </h2>
                 <p className="text-gray-700 mb-4">
-                  This project is open source and welcomes contributions from
-                  the developer community. Whether you're a student looking to
-                  learn or an experienced developer wanting to contribute, there
-                  are many ways to get involved:
+                  Projeto desenvolvido por estudantes do 7º período de Ciência da Computação:
                 </p>
-                <ul className="text-gray-700 space-y-2 mb-4">
-                  <li>• Report bugs and suggest improvements</li>
-                  <li>• Submit pull requests for new features</li>
-                  <li>• Improve documentation and tutorials</li>
-                  <li>• Share your experience using the project</li>
-                </ul>
-                <p className="text-gray-700">
-                  The project is licensed under the MIT License, making it free
-                  to use, modify, and distribute for educational and commercial
-                  purposes.
-                </p>
+                <div className="grid md:grid-cols-2 gap-4 mb-6">
+                  {[
+                    { nome: "Vladison Lucas", papel: "Backend & Banco de Dados & Frontend" },
+                    { nome: "Maria", papel: "DevOps" },
+                    { nome: "Tomaz", papel: "DevOps" },
+                    { nome: "Ingryd", papel: "Frontend" },
+                  ].map((membro) => (
+                    <div key={membro.nome} className="bg-indigo-50 rounded-lg p-4 border border-indigo-100">
+                      <p className="font-semibold text-indigo-700">{membro.nome}</p>
+                      <p className="text-sm text-gray-600">{membro.papel}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <a href="https://github.com/vladisonl" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-indigo-600 hover:text-indigo-800">
+                  <Github className="h-5 w-5 mr-2" />
+                  Repositório do Projeto
+                </a>
               </div>
 
               <div className="bg-indigo-50 rounded-lg border border-indigo-200 p-8 text-center">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-                  Get in Touch
+                  Entre em Contato
                 </h2>
                 <p className="text-gray-700 mb-6">
-                  Have questions about the project? Need help with
-                  implementation? Want to share your experience? We'd love to
-                  hear from you!
+                  Tem dúvidas sobre o projeto? Quer saber mais sobre a implementação? Fale com a gente!
                 </p>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
                 >
                   <Mail className="h-5 w-5 mr-2" />
-                  Contact Us
+                  Fale Conosco
                 </Link>
               </div>
+
             </div>
           </div>
         </div>

@@ -9,15 +9,15 @@ export const handleSendMessage = async (req, res) => {
         const { name, email, subject, message } = req.body;
         await resend.batch.send([{
             from: `${name} <onboarding@resend.dev>`,
-            to: ['hi@ihavetech.com'],
+            to: ['vladisonvlad0@gmail.com'],
             reply_to: email,
             subject: `${name} send a message`,
             html: adminEmailTemplate(name, email, subject, message)
         },
         {
-            from: `Avnish Kumar <hi@ihavetech.com>`,
+            from: `SnapURL <onboarding@resend.dev>`,
             to: email,
-            subject: `Reply from Avnish Kumar`,
+            subject: `Mensagem recebida - SnapURL`,
             html: userEmailTemplate(name, email, subject, message)
         }]
         );

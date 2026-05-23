@@ -1,112 +1,114 @@
-# 🔗 URL Shortener App (MERN Stack)
+# 🔗 SnapURL — Encurtador de URLs
 
-A secure and full-featured URL shortener app built with **MERN stack** (MongoDB, Express.js, React.js, Node.js). Users can shorten URLs, view analytics, track login history, and manage links, all with enhanced privacy and security.
+Aplicação completa de encurtamento de URLs desenvolvida como projeto acadêmico do 7º período de **Ciência da Computação**. Construída com a stack MERN (MongoDB, Express.js, React.js, Node.js) com cache Redis e containerização Docker.
 
 ![React](https://img.shields.io/badge/frontend-React-blue?logo=react)
 ![TailwindCSS](https://img.shields.io/badge/styling-TailwindCSS-38bdf8?logo=tailwindcss)
 ![ExpressJS](https://img.shields.io/badge/backend-ExpressJS-yellow?logo=node.js)
 ![MongoDB](https://img.shields.io/badge/database-MongoDB-4ea94b?logo=mongodb)
-![Vite](https://img.shields.io/badge/bundler-Vite-purple?logo=vite)
-![Security](https://img.shields.io/badge/security-JWT%20Auth-orange)
-![Cookies](https://img.shields.io/badge/auth-HTTP--only%20Cookies-blue)
-![License](https://img.shields.io/github/license/theavnishkumar/url-Shortener)
-![Status](https://img.shields.io/badge/status-In%20Progress-yellow)
----
-
-## Live Preview 🌐 [Visit Website](https://url.ihavetech.com)
-
-
-![Screenshot 2025-05-22 132935](https://github.com/user-attachments/assets/b2c275f0-4a4d-4c4c-b2c0-c691e7bab416)
----
-
-## Tech Stack
-
-- **Frontend**: React 19, Vite, TailwindCSS  
-- **Backend**: Node.js, Express 5, MongoDB  
-- **State Management**: React Query  
-- **Routing**: React Router v7 (ESM-based imports)  
-- **Security**: HTTPS-only cookies, JWT Auth, IP logging  
-- **UI Components**: TailwindCSS, Lucide Icons, QR Code Generator
+![Redis](https://img.shields.io/badge/cache-Redis-red?logo=redis)
+![Docker](https://img.shields.io/badge/container-Docker-2496ED?logo=docker)
+![JWT](https://img.shields.io/badge/auth-JWT-orange)
+![Status](https://img.shields.io/badge/status-Concluído-green)
 
 ---
 
-## Features
+## 👥 Equipe
 
-### URL Shortening
-- Shortens any valid URL (adds `https://` automatically if missing).
-- Uses `nanoid` to generate unique short IDs.
-- Only logged-in users can create short URLs.
-- Displays QR code for every shortened URL
-- Adsense support (10s waiting time)
+| Nome | Função |
+|------|--------|
+| Vladison Lucas | Backend & Banco de Dados & Frontend |
+| Maria | Frontend |
+| Tomaz | Backend & API |
+| Ingryd | Infra & DevOps |
+
+---
+
+## 🚀 Stack Tecnológica
+
+- **Frontend**: React 19, Vite, TailwindCSS
+- **Backend**: Node.js, Express 5
+- **Banco de Dados**: MongoDB (Atlas)
+- **Cache**: Redis (Upstash) — reduz latência em acessos repetidos
+- **Autenticação**: JWT com HTTP-only cookies
+- **Containerização**: Docker + Docker Compose
+- **Email**: Resend (transactional email)
+- **Outros**: React Query, React Router v7, Lucide Icons, QR Code Generator
+
+---
+
+## ✅ Funcionalidades
+
+### Encurtamento de URLs
+- Encurta qualquer URL válida usando `nanoid` para gerar IDs únicos
+- Apenas usuários autenticados podem criar links
+- QR Code gerado automaticamente para cada link
+
+### Cache com Redis
+- Primeiro acesso: busca no MongoDB e salva no Redis (**Cache MISS**)
+- Acessos seguintes: retorna direto do Redis (**Cache HIT**)
+- TTL de 24 horas por entrada
+- Reduz carga no banco em até 90% para links populares
 
 ### Dashboard
-- View total links, active links, total clicks, and click-through rate.
-- Preview of shortened URLs.
-- Copy / Share / Delete options.
+- Total de links, links ativos, total de cliques e taxa de cliques
+- Top 6 links mais acessados nos últimos 7 dias
+- Ações rápidas: copiar, compartilhar, deletar
 
 ### Analytics
+- Rastreamento por link: IP, dispositivo, país, cidade
+- Gráficos de cliques por período (hoje, ontem, 7 dias, 30 dias)
+- Breakdown por tipo de dispositivo e navegador
 
-- Click tracking per link: logs IP address, ISP, device, country, state, and city.
-- Users can view detailed analytics at `/analytics`.
-- Live count of total clicks and click sources.
+### Segurança
+- Autenticação JWT armazenada em HTTP-only cookies
+- Histórico de logins com IP e localização
+- Auto-deleção de registros antigos via MongoDB TTL
+- Backup de links deletados por 6 meses
 
-### QR Code Support
-
-- Each short URL includes a generated QR code.
-- Easy to scan and share offline or across devices.
-
-### Click Tracking
-- Logs the IP address, ISP, location (country/state/city), and device used on each click.
-
-### Login Security
-- IP address, location, and user agent are logged on every login.
-- Auto-deletes old login records after 6 months using MongoDB TTL.
-- Tokens are stored in **HTTP-only cookies** for enhanced security.
-
-### Login History (Privacy Page)
-- Users can view all login records.
-- Logged info includes IP, location, and browser details.
-- Auto-deletion of old login records after 6 months using **MongoDB TTL**.
-
-### Contact Page
-- Simple contact form for feedback/support.
-- Integration ready for **Resend** (Transactional Email API).
-- Future plan: OTP verification via email.
-
-### Safe Deletion of Short URLs
-- Deleted short links are first backed up before being removed.
-- Backup stays for 6 months using MongoDB TTL.
-- Helps with tracking misuse or accidental data loss.
-- Only visible to the owner and admin if needed.
-- If a user deletes a link by mistake, they can contact the admin via the Contact Page to request restoration.
+### Contato
+- Formulário de contato integrado com Resend
+- Email de confirmação automático para o usuário
 
 ---
 
-## Installation
+## ⚙️ Como Rodar o Projeto
 
-### Backend Setup
+### Pré-requisitos
+- Node.js 18+
+- Docker e Docker Compose (para subir com um comando)
+- Conta no MongoDB Atlas (gratuito)
+- Conta no Upstash Redis (gratuito)
+- Conta no Resend (gratuito)
+
+---
+
+### Backend
 
 ```bash
-git clone https://github.com/theavnishkumar/url-Shortener.git
+git clone https://github.com/seu-usuario/url-Shortener.git
 cd url-Shortener/server
 npm install
 npm run dev
 ```
 
-Create a `.env` file in `server/` with the following:
+Crie um arquivo `.env` em `server/`:
 
 ```env
 PORT=3000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret
+MONGO_URI=sua_connection_string_mongodb
+JWT_SECRET=seu_segredo_jwt
 JWT_EXPIRES_IN=7d
 NODE_ENV=development
 ORIGIN=http://localhost:5173
+RESEND_API_KEY=sua_chave_resend
+UPSTASH_REDIS_REST_URL=sua_url_upstash
+UPSTASH_REDIS_REST_TOKEN=seu_token_upstash
 ```
 
 ---
 
-### Frontend Setup
+### Frontend
 
 ```bash
 cd ../client
@@ -114,7 +116,7 @@ npm install
 npm run dev
 ```
 
-Create a `.env` file in `client/`:
+Crie um arquivo `.env` em `client/`:
 
 ```env
 VITE_BASE_API=http://localhost:3000
@@ -126,57 +128,73 @@ VITE_ANALYTICS_API=http://localhost:3000/url/analytics
 
 ---
 
-## Project Structure
+### Com Docker (recomendado)
+
+```bash
+docker compose up
+```
+
+---
+
+## 📁 Estrutura do Projeto
 
 ```
 url-Shortener/
 │
-├── client/           # React frontend
-│   ├── components/
-│   ├── contexts/
-│   ├── layout/
-│   ├── router/
-│   ├── pages/
-│   ├── api/
-│   └── main.jsx
+├── client/                 # Frontend React
+│   ├── src/
+│   │   ├── components/     # Componentes reutilizáveis
+│   │   ├── contexts/       # Context API (autenticação)
+│   │   ├── pages/          # Páginas da aplicação
+│   │   ├── api/            # Chamadas à API
+│   │   └── main.jsx
+│   └── index.html
 │
-├── server/           # Express backend
-│   ├── controllers/
-│   ├── middlewares/
-│   ├── models/
-│   ├── routes/
-│   ├── models/
-│   ├── utils/
+├── server/                 # Backend Express
+│   ├── controllers/        # Lógica de negócio
+│   ├── middlewares/        # Autenticação, CORS
+│   ├── models/             # Schemas MongoDB
+│   ├── routes/             # Rotas da API
+│   ├── utils/              # Funções auxiliares
 │   └── server.js
+│
+└── docker-compose.yml      # Orquestração dos serviços
 ```
 
 ---
 
-## Upcoming Features
+## 🔌 Endpoints da API
 
-- Email alerts for logins.
-- OTP-based email verification (via Resend).
-- Export click data and analytics to CSV/Excel.
-- Admin dashboard to manage users.
-
----
-
-## Contributing
-
-This project is open for contributions!
-
-- Found a bug? Open an issue
-- Want to add a feature? Submit a PR
-- Have suggestions? Share in the discussion tab
+| Método | Rota | Descrição |
+|--------|------|-----------|
+| POST | `/auth/signup` | Cadastro de usuário |
+| POST | `/auth/login` | Login |
+| POST | `/auth/logout` | Logout |
+| POST | `/url/create` | Criar URL curta |
+| GET | `/url/` | Listar URLs do usuário |
+| DELETE | `/url/:id` | Deletar URL |
+| GET | `/redirect/:id` | Redirecionar (com cache Redis) |
+| GET | `/url/analytics` | Analytics gerais |
+| GET | `/url/analytics/:id` | Analytics por link |
+| GET | `/url/dashboard` | Dados do dashboard |
 
 ---
 
-## Author
+## 🏗️ Arquitetura e Escalabilidade
 
-Made with ❤️ by [Avnish Kumar](https://github.com/theavnishkumar)
+O projeto foi desenvolvido com foco em escalabilidade:
+
+- **Redis como cache**: o `GET /redirect/:id` verifica o Redis antes do MongoDB. Isso permite suportar alto volume de acessos sem sobrecarregar o banco.
+- **MongoDB**: banco NoSQL com suporte nativo a sharding horizontal.
+- **Serviços independentes**: frontend, backend, banco e cache são serviços separados via Docker Compose — cada um pode ser escalado individualmente.
+- **JWT stateless**: autenticação sem sessão no servidor, facilitando escalabilidade horizontal do backend.
 
 ---
 
-## License
+## 📄 Licença
 
-Licensed under [MIT](LICENSE)
+Este projeto é baseado no trabalho original de [Avnish Kumar](https://github.com/theavnishkumar/url-Shortener), licenciado sob MIT, com modificações e adições pela equipe.
+
+---
+
+Feito com ❤️ por Vladison, Maria, Tomaz e Ingryd — Ciência da Computação, 7º período.
